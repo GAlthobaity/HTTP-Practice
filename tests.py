@@ -7,7 +7,7 @@ def test_1_perform_get_request():
 
     assert response.status_code == 200
     assert response.request.method == 'GET'
-    assert response.request.url == 'https://httpbin.org/get'
+    assert response.request.url == 'https://httpbin.io/get'
     assert 'args' in response.json()
     assert response.json()['args'] == {}
     assert 'headers' in response.json()
@@ -20,7 +20,7 @@ def test_2_perform_get_request_with_params():
 
     assert response.status_code == 200
     assert response.request.method == 'GET'
-    assert response.request.url.startswith('https://httpbin.org/get?')
+    assert response.request.url.startswith('https://httpbin.io/get?')
     assert 'args' in response.json()
     assert response.json()['args'] != {}
     assert 'headers' in response.json()
@@ -38,7 +38,7 @@ def test_3_perform_post_request():
 
     assert response.status_code == 200
     assert response.request.method == 'POST'
-    assert response.request.url == 'https://httpbin.org/post'
+    assert response.request.url == 'https://httpbin.io/post'
     assert response.json()['json'] == expected
 
 
@@ -52,7 +52,7 @@ def test_4_perform_put_request():
 
     assert response.status_code == 200
     assert response.request.method == 'PUT'
-    assert response.request.url == 'https://httpbin.org/put'
+    assert response.request.url == 'https://httpbin.io/put'
     assert response.json()['json'] == expected
 
 
@@ -65,7 +65,7 @@ def test_5_perform_patch_request():
 
     assert response.status_code == 200
     assert response.request.method == 'PATCH'
-    assert response.request.url == 'https://httpbin.org/patch'
+    assert response.request.url == 'https://httpbin.io/patch'
     assert response.json()['json'] == expected
 
 
@@ -74,7 +74,7 @@ def test_6_perform_delete_request():
 
     assert response.status_code == 200
     assert response.request.method == 'DELETE'
-    assert response.request.url == 'https://httpbin.org/delete'
+    assert response.request.url == 'https://httpbin.io/delete'
 
 
 def test_7_perform_redirect_request():

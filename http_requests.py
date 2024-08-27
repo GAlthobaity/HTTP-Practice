@@ -3,7 +3,7 @@ import requests
 
 def perform_get_request():
     """Perform GET request to given URL and return the response"""
-    url = 'https://httpbin.org/get'
+    url = 'https://httpbin.io/get'
     response = requests.get(url)
     return response
 
